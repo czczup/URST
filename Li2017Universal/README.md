@@ -1,6 +1,6 @@
 # Li2017Universal
 
-This is a PyTorch implementation for the paper "[Universal Style Transfer via Feature Transforms](https://arxiv.org/pdf/1705.08086.pdf)", which comes from the repository [PytorchWCT](https://github.com/sunshineatnoon/PytorchWCT).
+This is a PyTorch implementation for the paper "[Universal Style Transfer via Feature Transforms](https://arxiv.org/pdf/1705.08086)", which comes from the repository [PytorchWCT](https://github.com/sunshineatnoon/PytorchWCT).
 
 ## Test (Ultra-high Resolution Style Transfer)
 

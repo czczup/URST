@@ -5,6 +5,7 @@ This is a PyTorch implementation for the paper "[Collaborative Distillation for 
 <p align="center">
   One stylized sample of 10240 x 4096 pixels.
 </p>
+
 ## Test (Ultra-high Resolution Style Transfer)
 
 Use `--content` and `--style` to provide the respective path to the content and style image.
