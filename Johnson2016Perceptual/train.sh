@@ -1,0 +1,1 @@
+single python trainv2.py  --dataset_path datasets/coco2014/train2014  --style_image images/styles/cuphead_hd.png   --image_size 256  --style_size 256 --batch_size 8

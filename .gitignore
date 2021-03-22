@@ -122,3 +122,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+*.pth
+examples/
+.idea/
+Huang2017AdaIN/models
+Li2017Universal/models
+Zhang2017MultiStyle/models
