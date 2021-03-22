@@ -7,6 +7,9 @@ This is a PyTorch implementation for the paper "[Arbitrary Style Transfer in Rea
 ### Example 1
 
 <center><img src="../assets/ultra_high_result.jpg" width="1000" hspace="10"></center>
+<p align="center">
+  One ultra-high resolution stylized result of 12000 x 8000 pixels (i.e., 96 megapixels).
+</p>
 
 ```shell
 CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content ../examples/content/pexels-andrea-piacquadio-3830880.jpg \
@@ -18,6 +21,9 @@ CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content ../examples/content/pexel
 ### Example 2
 
 <center><img src="../assets/ultra_high_result_2.jpg" width="1000" hspace="10"></center>
+<p align="center">
+  One ultra-high resolution stylized result of 12000 x 8000 pixels (i.e., 96 megapixels).
+</p>
 
 ```shell
 CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content ../examples/content/pexels-julia-volk-5273641.jpg \

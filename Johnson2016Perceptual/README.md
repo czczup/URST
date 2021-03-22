@@ -1,43 +1,25 @@
-# Fast Neural Style Transfer in PyTorch
+# Johnson2016Perceptual
+
+This is a PyTorch implementation for the paper "[Perceptual Losses for Real-Time Style Transfer and Super-Resolution](https://arxiv.org/abs/1603.08155)", which comes from the repository [Fast-Neural-Style-Transfer](https://github.com/eriklindernoren/Fast-Neural-Style-Transfer).
 
 <p align="center">
     <img src="assets/zurich.jpg" width="900"\>
 </p>
 
-PyTorch implementation of [Fast Neural Style Transfer](https://cs.stanford.edu/people/jcjohns/eccv16/) ([official Lua implementation](https://github.com/jcjohnson/fast-neural-style)).
+## Test (Ultra-high Resolution Style Transfer)
 
-## Requirements
-
-- Python 3.6
-- PyTorch 1.1+
-- TorchVision
-- Pillow
-- tqdm
-
-## Train
+Use `--content` and `--style` to provide the respective path to the content and style image.
 
 ```shell
-python train.py  --dataset_path <path-to-dataset> \
-                 --style_image <path-to-style-image> \
-                 --epochs 2 \
-                 --batch_size 4 \
-                 --image_size 512
-                 --style_size 1024
-```
-
-
-## Test
-
-```shell
-CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content <path-to-image> \
-                                             --model <path-to-checkpoint> \
+CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content <content_path> \
+                                             --model <model_path> \
                                              --URST
 ```
 
-for example:
+For example:
 
 ```shell
-CUDA_VISIBLE_DEVICES=0 python test.py --content ../examples/content/pexels-andrea-piacquadio-3830880.jpg \
+CUDA_VISIBLE_DEVICES=0 python test.py --content ../examples/content/pexels-paulo-marcelo-martins-2412603.jpg \
                                       --model models/mosaic_1024_10000.pth \
                                       --URST
 ```
@@ -47,3 +29,7 @@ Some options:
 * `--patch_size`: The maximum size of each patch. The default setting is 1000.
 * `--thumb_size`: The size of the thumbnail image. The default setting is 1024.
 * `--URST`: Use our URST framework to process ultra-high resolution images.
+
+## Train
+
+Please refer to [Fast-Neural-Style-Transfer](https://github.com/eriklindernoren/Fast-Neural-Style-Transfer).
