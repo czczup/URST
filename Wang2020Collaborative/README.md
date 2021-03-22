@@ -1,6 +1,10 @@
 # Wang2020Collaborative
 This is a PyTorch implementation for the paper "[Collaborative Distillation for Ultra-Resolution Universal Style Transfer](https://arxiv.org/abs/2003.08436)", which comes from the repository [Collaborative-Distillation](https://github.com/MingSun-Tse/Collaborative-Distillation).
 
+<center><img src="https://github.com/MingSun-Tse/Collaborative-Distillation/raw/master/UHD_stylized.jpg" width="1000" hspace="10"></center>
+<p align="center">
+  One stylized sample of 10240 x 4096 pixels.
+</p>
 ## Test (Ultra-high Resolution Style Transfer)
 
 Use `--content` and `--style` to provide the respective path to the content and style image.
