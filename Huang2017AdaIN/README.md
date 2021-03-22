@@ -1,28 +1,38 @@
-# pytorch-AdaIN
+# Huang2017AdaIN
 
-This is a pytorch implementation of a paper, Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization [Huang+, ICCV2017].
+This is a PyTorch implementation for the paper "[Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization](https://arxiv.org/abs/1703.06868)", which comes from the repository [pytorch-AdaIN](https://github.com/naoto0804/pytorch-AdaIN).
 
-![Results](results.png)
+## Ultra-high Resolution Stylized Results
 
-## Requirements
-- Python 3.6
-- PyTorch 1.1+
-- TorchVision
-- Pillow
-- tqdm
+### Example 1
 
-(optional, for training)
+<center><img src="../assets/ultra_high_result.jpg" width="1000" hspace="10"></center>
 
-- TensorboardX
-
-## Usage
-
-### Test
-Use `--content` and `--style` to provide the respective path to the content and style image.
 ```shell
 CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content ../examples/content/pexels-andrea-piacquadio-3830880.jpg \
                                              --style ../examples/style/line2.png \
                                              --decoder models/decoder_stroke_perceptual_loss_1.pth.tar \
+                                             --URST
+```
+
+### Example 2
+
+<center><img src="../assets/ultra_high_result_2.jpg" width="1000" hspace="10"></center>
+
+```shell
+CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content ../examples/content/pexels-julia-volk-5273641.jpg \
+                                             --style ../examples/style/81575.jpg \
+                                             --decoder models/decoder_stroke_perceptual_loss_1.pth.tar \
+                                             --URST
+```
+
+## Test (Ultra-high Resolution Style Transfer)
+
+Use `--content` and `--style` to provide the respective path to the content and style image.
+```shell
+CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content <content_path> \
+                                             --style <style_path> \
+                                             --decoder <decoder_path> \
                                              --URST
 ```
 
@@ -35,15 +45,11 @@ Some options:
 * `--alpha`: Adjust the degree of stylization. It should be a value between 0.0 and 1.0 (default).
 * `--preserve_color`: Preserve the color of the content image.
 
+## Train (Enlarge the Stroke Size)
 
-### Train
 Use `--content_dir` and `--style_dir` to provide the respective directory to the content and style images.
 ```shell
-CUDA_VISIBLE_DEVICES=<gpu_id> python trainv2.py --content_dir <content_dir> --style_dir <style_dir>
+CUDA_VISIBLE_DEVICES=<gpu_id> python trainv2.py --content_dir <coco_path> --style_dir <wikiart_path>
 ```
 
-For more details and parameters, please refer to --help option.
-
-## References
-- [1]: X. Huang and S. Belongie. "Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization.", in ICCV, 2017.
-- [2]: [Original implementation in Torch](https://github.com/xunhuang1995/AdaIN-style)
+For more details and parameters, please refer to `--help` option.
