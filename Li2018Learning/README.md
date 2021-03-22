@@ -1,5 +1,5 @@
 ## Li2018Learning
-This is a PyTorch implementation for the paper "[Learning Linear Transformations for Fast Image and Video Style Transfer](http://openaccess.thecvf.com/content_CVPR_2019/papers/Li_Learning_Linear_Transformations_for_Fast_Image_and_Video_Style_Transfer_CVPR_2019_paper.pdf)", which comes from the repository [LinearStyleTransfer](https://github.com/sunshineatnoon/LinearStyleTransfer).
+This is a PyTorch implementation for the paper "[Learning Linear Transformations for Fast Image and Video Style Transfer](https://openaccess.thecvf.com/content_CVPR_2019/html/Li_Learning_Linear_Transformations_for_Fast_Image_and_Video_Style_Transfer_CVPR_2019_paper.html)", which comes from the repository [LinearStyleTransfer](https://github.com/sunshineatnoon/LinearStyleTransfer).
 
 ## Ultra-high Resolution Stylized Result
 
