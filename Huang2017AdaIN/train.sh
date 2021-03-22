@@ -1,1 +1,0 @@
-python trainv7.py --content_dir  datasets/coco2014/train2014/train2014 --style_dir datasets/wikiart/train/ --patch_weight 2.0
