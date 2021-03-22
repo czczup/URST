@@ -49,12 +49,12 @@ git clone https://github.com/czczup/URST.git
 **Step 1: Prepare images**
 
 - Content images and style images are placed in `examples/`.
-- Since the ultra-high resolution images are quite large, we not place them in this repository. Please download them from this [google drive]().
-- All content images used in this repository are collected from [pexels.com](). 
+- Since the ultra-high resolution images are quite large, we not place them in this repository. Please download them from this [google drive](https://drive.google.com/file/d/1TFWHb-PQ57qYCaNm2lKUxtxouq3PJO0i/view?usp=sharing).
+- All content images used in this repository are collected from [pexels.com](https://www.pexels.com/). 
 
 **Step 2: Prepare models**
 
-- Download models from this [google drive](). Unzip and merge them into this repository.
+- Download models from this [google drive](https://drive.google.com/file/d/1f-G5RsYMUqJlTgNBV7_MfRP_JIb6Oz2b/view?usp=sharing). Unzip and merge them into this repository.
 
 **Step 3: Stylization**
 
@@ -115,9 +115,9 @@ Optional options:
 
 **Step 1: Prepare dataset**
 
-Download the [MS-COCO 2014 dataset](http://cocodataset.org/#download) and [WikiArt dataset]().
+Download the [MS-COCO 2014 dataset](http://cocodataset.org/#download) and [WikiArt dataset](https://www.kaggle.com/c/painter-by-numbers).
 
-- MSCOCO
+- MS-COCO
 
   ```shell
   wget http://msvocds.blob.core.windows.net/coco2014/train2014.zip
@@ -142,14 +142,14 @@ As same as the Step 2 in the test phase.
 
   ```shell
   cd Huang2017AdaIN/
-  CUDA_VISIBLE_DEVICES=<gpu_id> python trainv2.py --content_dir <content_dir> --style_dir <style_dir>
+  CUDA_VISIBLE_DEVICES=<gpu_id> python trainv2.py --content_dir <coco_path> --style_dir <wikiart_path>
   ```
 
 - For LinearWCT:
 
   ```shell
   cd Li2018Learning/
-  CUDA_VISIBLE_DEVICES=<gpu_id> python trainv2.py --contentPath <content_dir> --stylePath <style_dir>
+  CUDA_VISIBLE_DEVICES=<gpu_id> python trainv2.py --contentPath <coco_path> --stylePath <wikiart_path>
   ```
 
 ## License
