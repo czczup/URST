@@ -10,6 +10,7 @@ With the growth of the input resolution, the memory cost of our URST hardly incr
 <p align="center">
   One ultra-high resolution stylized result of 12000 x 8000 pixels (i.e., 96 megapixels).
 </p>
+
 This repository is developed based on six representative style transfer methods, which are [Johnson et al.](https://arxiv.org/abs/1603.08155), [MSG-Net](https://arxiv.org/abs/1703.06953),  [AdaIN](https://arxiv.org/abs/1703.06868), [WCT](https://arxiv.org/abs/1705.08086), [LinearWCT](https://openaccess.thecvf.com/content_CVPR_2019/html/Li_Learning_Linear_Transformations_for_Fast_Image_and_Video_Style_Transfer_CVPR_2019_paper.html), and [Wang et al. (Collaborative Distillation)](https://arxiv.org/abs/2003.08436).
 
 For details see [Towards Ultra-Resolution Neural Style Transfer via Thumbnail Instance Normalization]().
@@ -43,7 +44,7 @@ Then, clone the repository locally:
 git clone https://github.com/czczup/URST.git
 ```
 
-## Test
+## Test (Ultra-high Resolution Style Transfer)
 
 **Step 1: Prepare images**
 
@@ -57,47 +58,100 @@ git clone https://github.com/czczup/URST.git
 
 **Step 3: Stylization**
 
-- For [Johnson et al.](https://arxiv.org/abs/1603.08155), we use the PyTorch implementation [Fast-Neural-Style-Transfer](https://github.com/eriklindernoren/Fast-Neural-Style-Transfer).
+First, choose a specific style transfer method and enter the directory. 
+
+Then, please run the corresponding script. The stylized results will be saved in `output/`.
+
+- For Johnson et al., we use the PyTorch implementation [Fast-Neural-Style-Transfer](https://github.com/eriklindernoren/Fast-Neural-Style-Transfer).
 
   ```shell
   cd Johnson2016Perceptual/
   CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content <content_path> --model <model_path> --URST
   ```
 
-- For [MSG-Net](https://arxiv.org/abs/1703.06953), we use the official PyTorch implementation [PyTorch-Multi-Style-Transfer](https://github.com/zhanghang1989/PyTorch-Multi-Style-Transfer).
+- For MSG-Net, we use the official PyTorch implementation [PyTorch-Multi-Style-Transfer](https://github.com/zhanghang1989/PyTorch-Multi-Style-Transfer).
 
   ```shell
   cd Zhang2017MultiStyle/
   CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content <content_path> --style <style_path> --URST
   ```
 
-- For [AdaIN](https://arxiv.org/abs/1703.06868), we use the PyTorch implementation [pytorch-AdaIN](https://github.com/naoto0804/pytorch-AdaIN).
+- For AdaIN, we use the PyTorch implementation [pytorch-AdaIN](https://github.com/naoto0804/pytorch-AdaIN).
 
   ```shell
   cd Huang2017AdaIN/
   CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content <content_path> --style <style_path> --URST
   ```
 
-- For [WCT](https://arxiv.org/abs/1705.08086), we use the PyTorch implementation [PytorchWCT](https://github.com/sunshineatnoon/PytorchWCT).
+- For WCT, we use the PyTorch implementation [PytorchWCT](https://github.com/sunshineatnoon/PytorchWCT).
 
   ```shell
   cd Li2017Universal/
   CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content <content_path> --style <style_path> --URST
   ```
 
-- For [LinearWCT](https://openaccess.thecvf.com/content_CVPR_2019/html/Li_Learning_Linear_Transformations_for_Fast_Image_and_Video_Style_Transfer_CVPR_2019_paper.html), we use the official PyTorch implementation [LinearStyleTransfer](https://github.com/sunshineatnoon/LinearStyleTransfer).
+- For LinearWCT, we use the official PyTorch implementation [LinearStyleTransfer](https://github.com/sunshineatnoon/LinearStyleTransfer).
 
   ```shell
   cd Li2018Learning/
   CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content <content_path> --style <style_path> --URST
   ```
 
-- For [Wang et al. (Collaborative Distillation)](https://arxiv.org/abs/2003.08436), we use the official PyTorch implementation [Collaborative-Distillation](https://github.com/MingSun-Tse/Collaborative-Distillation).
+- For Wang et al. (Collaborative Distillation), we use the official PyTorch implementation [Collaborative-Distillation](https://github.com/MingSun-Tse/Collaborative-Distillation).
 
   ```shell
   cd Wang2020Collaborative/PytorchWCT/
   CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content <content_path> --style <style_path> --URST
   ```
 
-  
+Optional options:
 
+- `--patch_size`: The maximum size of each patch. The default setting is 1000.
+- `--style_size`: The size of the style image. The default setting is 1024.
+- `--thumb_size`: The size of the thumbnail image. The default setting is 1024.
+- `--URST`: Use our URST framework to process ultra-high resolution images.
+
+## Train (Enlarge the Stroke Size)
+
+**Step 1: Prepare dataset**
+
+Download the [MS-COCO 2014 dataset](http://cocodataset.org/#download) and [WikiArt dataset]().
+
+- MSCOCO
+
+  ```shell
+  wget http://msvocds.blob.core.windows.net/coco2014/train2014.zip
+  ```
+
+- WikiArt
+
+  - Either manually download from [kaggle](https://www.kaggle.com/c/painter-by-numbers).
+  - Or install [kaggle-cli](https://github.com/floydwch/kaggle-cli) and download by running:
+
+  ```shell
+  kg download -u <username> -p <password> -c painter-by-numbers -f train.zip
+  ```
+
+**Step 2: Prepare models**
+
+As same as the Step 2 in the test phase.
+
+**Step 3: Train the encoder with our stroke perceptual loss**
+
+- For AdaIN:
+
+  ```shell
+  cd Huang2017AdaIN/
+  CUDA_VISIBLE_DEVICES=<gpu_id> python trainv2.py --content_dir <content_dir> --style_dir <style_dir>
+  ```
+
+- For LinearWCT:
+
+  ```shell
+  cd Li2018Learning/
+  CUDA_VISIBLE_DEVICES=<gpu_id> python trainv2.py --contentPath <content_dir> --stylePath <style_dir>
+  ```
+
+## License
+
+This repository is released under the Apache 2.0 license as found in the [LICENSE](https://github.com/czczup/URST/blob/main/LICENSE.md) file.
