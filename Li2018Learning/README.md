@@ -1,24 +1,29 @@
-## Learning Linear Transformations for Fast Image and Video Style Transfer
-**[[Paper]](http://openaccess.thecvf.com/content_CVPR_2019/papers/Li_Learning_Linear_Transformations_for_Fast_Image_and_Video_Style_Transfer_CVPR_2019_paper.pdf)** **[[Project Page]](https://sites.google.com/view/linear-style-transfer-cvpr19/)**
+## Li2018Learning
+This is a PyTorch implementation for the paper "[Learning Linear Transformations for Fast Image and Video Style Transfer](http://openaccess.thecvf.com/content_CVPR_2019/papers/Li_Learning_Linear_Transformations_for_Fast_Image_and_Video_Style_Transfer_CVPR_2019_paper.pdf)", which comes from the repository [LinearStyleTransfer](https://github.com/sunshineatnoon/LinearStyleTransfer).
 
-<img src="doc/images/chicago_paste.png" height="149" hspace="5"><img src="doc/images/photo_content.png" height="150" hspace="5"><img src="doc/images/content.gif" height="150" hspace="5">
-<img src="doc/images/chicago_27.png" height="150" hspace="5"><img src="doc/images/in5_result.png" height="150" hspace="5"><img src="doc/images/test.gif" height="150" hspace="5">
+## Ultra-high Resolution Stylized Result
 
-## Requirements
+<center><img src="../assets/ultra_high_result_3.jpg" width="1000" hspace="10"></center>
+<p align="center">
+  One ultra-high resolution stylized result of 12000 x 8000 pixels (i.e., 96 megapixels).
+</p>
 
-- Python 3.6
-- PyTorch 1.1+
-- TorchVision
-- Pillow
-- tqdm
 
-## Style Transfer
+```shell
+CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content ../examples/content/pexels-alisha-lubben-2305747.jpg \
+                                             --style ../examples/style/mosaic.png \
+                                             --decoder models/dec_r41_stroke_perceptual_loss_1.pth \
+                                             --URST
+```
+
+## Test (Ultra-high Resolution Style Transfer)
+
 Use `--content` and `--style` to provide the respective path to the content and style image.
 
 ```shell
-CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content ../examples/content/pexels-andrea-piacquadio-3830880.jpg \
-                                             --style ../examples/style/line2.png \
-                                             --decoder models/dec_r41_stroke_perceptual_loss_1.pth
+CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content <content_path> \
+                                             --style <style_path> \
+                                             --decoder <decoder_path> \
                                              --URST
 ```
 
@@ -30,24 +35,12 @@ Some options:
 * `--decoder`: Path to the decoder. The default decoder is the original model trained without our stroke perceptual loss. 
 * `--URST`: Use our URST framework to process ultra-high resolution images.
 
-## Model Training
-### Data Preparation
-- MSCOCO
+## Train (Enlarge the Stroke Size)
 
-  ```shell
-  wget http://msvocds.blob.core.windows.net/coco2014/train2014.zip
-  ```
-- WikiArt
-  - Either manually download from [kaggle](https://www.kaggle.com/c/painter-by-numbers).
-  - Or install [kaggle-cli](https://github.com/floydwch/kaggle-cli) and download by running:
-  ```shell
-  kg download -u <username> -p <password> -c painter-by-numbers -f train.zip
-  ```
+Use `--contentPath` and `--stylePath` to provide the respective directory to the content and style images.
 
-### Training
-To train a model with our proposed stroke perceptual loss:
 ```shell
-python trainv2.py --contentPath PATH_TO_MSCOCO \
-                  --stylePath PATH_TO_WikiArt \
-                  --outf checkpoints/
+CUDA_VISIBLE_DEVICES=<gpu_id> python trainv2.py --contentPath <coco_path> --stylePath <wikiart_path>
 ```
+
+For more details and parameters, please refer to `--help` option.

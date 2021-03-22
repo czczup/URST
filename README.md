@@ -113,7 +113,7 @@ Optional options:
 
 ## Train (Enlarge the Stroke Size)
 
-**Step 1: Prepare dataset**
+**Step 1: Prepare datasets**
 
 Download the [MS-COCO 2014 dataset](http://cocodataset.org/#download) and [WikiArt dataset](https://www.kaggle.com/c/painter-by-numbers).
 

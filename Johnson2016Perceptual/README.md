@@ -8,7 +8,7 @@ This is a PyTorch implementation for the paper "[Perceptual Losses for Real-Time
 
 ## Test (Ultra-high Resolution Style Transfer)
 
-Use `--content` and `--style` to provide the respective path to the content and style image.
+Use `--content` and `--model` to provide the respective path to the content image and model.
 
 ```shell
 CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content <content_path> \
