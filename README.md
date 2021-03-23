@@ -143,7 +143,7 @@ Download the [MS-COCO 2014 dataset](http://cocodataset.org/#download) and [WikiA
 
 As same as the Step 2 in the test phase.
 
-**Step 3: Train the encoder with our stroke perceptual loss**
+**Step 3: Train the decoder with our stroke perceptual loss**
 
 - For AdaIN:
 
