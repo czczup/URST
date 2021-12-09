@@ -2,9 +2,9 @@
 
 Official PyTorch implementation for our URST (Ultra-Resolution Style Transfer) framework.
 
-URST is a versatile framework for ultra-high resolution style transfer under limited memory resources, which can be easily plugged in most existing neural style transfer methods.
+URST is a versatile framework for ultra-high resolution style transfer under limited GPU memory resources, which can be easily plugged in most existing neural style transfer methods.
 
-With the growth of the input resolution, the memory cost of our URST hardly increases. Theoretically, it supports style transfer of arbitrary high-resolution images. 
+With the growth of the input resolution, the memory cost of our URST hardly increases. Theoretically, it supports style transfer of arbitrary resolution images. 
 
 <center><img src="assets/ultra_high_result.jpg" width="1000" hspace="10"></center>
 <p align="center">
