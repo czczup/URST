@@ -1,4 +1,4 @@
-# Towards Ultra-Resolution Neural Style Transfer via Thumbnail Instance Normalization
+# Towards Ultra-Resolution Neural Style Transfer via Thumbnail Instance Normalization (AAAI'2022)
 
 Official PyTorch implementation for our URST (Ultra-Resolution Style Transfer) framework.
 
@@ -18,13 +18,11 @@ For details see [Towards Ultra-Resolution Neural Style Transfer via Thumbnail In
 If you use this code for a paper please cite:
 
 ```
-@misc{chen2021towards,
-      title={Towards Ultra-Resolution Neural Style Transfer via Thumbnail Instance Normalization}, 
-      author={Zhe Chen and Wenhai Wang and Enze Xie and Tong Lu and Ping Luo},
-      year={2021},
-      eprint={2103.11784},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@inproceedings{chen2022towards,
+  title={Towards Ultra-Resolution Neural Style Transfer via Thumbnail Instance Normalization},
+  author={Chen, Zhe and Wang, Wenhai and Xie, Enze and Lu, Tong and Luo, Ping},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  year={2022}
 }
 ```
 
