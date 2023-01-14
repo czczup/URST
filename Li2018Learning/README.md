@@ -4,20 +4,14 @@ This is a PyTorch implementation for the paper "[Learning Linear Transformations
 <img src="doc/images/chicago_paste.png" height="149" hspace="5"><img src="doc/images/photo_content.png" height="150" hspace="5"><img src="doc/images/content.gif" height="150" hspace="5">
 <img src="doc/images/chicago_27.png" height="150" hspace="5"><img src="doc/images/in5_result.png" height="150" hspace="5"><img src="doc/images/test.gif" height="150" hspace="5">
 
-## Ultra-high Resolution Stylized Result
-
-<center><img src="../assets/ultra_high_result_3.jpg" width="1000" hspace="10"></center>
-<p align="center">
-  One ultra-high resolution stylized result of 12000 x 8000 pixels (i.e., 96 megapixels).
-</p>
-
-
-```shell
-CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content ../examples/content/pexels-alisha-lubben-2305747.jpg \
-                                             --style ../examples/style/mosaic.png \
-                                             --decoder models/dec_r41_stroke_perceptual_loss_1.pth \
-                                             --URST
+## Setup
 ```
+# python 3.6.9
+pip install -r requirements.txt
+```
+
+## Models
+Download model at [link](https://drive.google.com/file/d/119zpTaDvBa-otAk3DPiBanY2AmH5hW98/view?usp=share_link)
 
 ## Test (Ultra-high Resolution Style Transfer)
 
