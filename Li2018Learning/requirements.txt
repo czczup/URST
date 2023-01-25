@@ -1,0 +1,11 @@
+cupy==11.4.0
+numpy==1.19.2
+opencv_contrib_python==4.7.0.68
+Pillow==9.4.0
+pynvrtc==9.2
+tensorboardX==2.5.1
+tools==0.1.9
+torch==0.4.1
+torchfile==0.1.0
+torchvision==0.2.1
+tqdm==4.64.1

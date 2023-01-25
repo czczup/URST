@@ -4,6 +4,15 @@ This is a PyTorch implementation for the paper "[Learning Linear Transformations
 <img src="doc/images/chicago_paste.png" height="149" hspace="5"><img src="doc/images/photo_content.png" height="150" hspace="5"><img src="doc/images/content.gif" height="150" hspace="5">
 <img src="doc/images/chicago_27.png" height="150" hspace="5"><img src="doc/images/in5_result.png" height="150" hspace="5"><img src="doc/images/test.gif" height="150" hspace="5">
 
+## Setup
+```
+# python 3.6.9
+pip install -r requirements.txt
+```
+
+## Models
+Download model at [link](https://drive.google.com/file/d/119zpTaDvBa-otAk3DPiBanY2AmH5hW98/view?usp=share_link)
+
 ## Ultra-high Resolution Stylized Result
 
 <center><img src="../assets/ultra_high_result_3.jpg" width="1000" hspace="10"></center>
