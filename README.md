@@ -109,6 +109,13 @@ Then, please run the corresponding script. The stylized results will be saved in
   CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content <content_path> --style <style_path> --URST
   ```
 
+- For Multimodal Transfer, we use the PyTorch implementation [multimodal_style_transfer](https://github.com/FeliMe/multimodal_style_transfer)
+  
+  ```shell
+  cd Wang2017Multimodal/
+  CUDA_VISIBLE_DEVICES=<gpu_id> python test.py --content <content_path> --model <model_name> --URST
+  ```
+
 Optional options:
 
 - `--patch_size`: The maximum size of each patch. The default setting is 1000.
