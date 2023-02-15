@@ -15,8 +15,8 @@ import math
 
 import sys
 sys.path.append("..")
-from tools import preprocess, unpadding
 from thumb_instance_norm import init_thumbnail_instance_norm
+from tools import preprocess, unpadding
 
 
 def init_args():
@@ -129,7 +129,7 @@ if __name__ == '__main__':
                                                    args.outf, f"ours-patch{PATCH_SIZE}-padding{PADDING}-model-{args.model}.jpg"),
                                                save=False if args.test_speed else True)
         else:
-            image = image.resize((256, 256))
+            # image = image.resize((256, 256))
             image = tf(image).unsqueeze(0).to(device)
             print("image:", image.shape)
             with torch.no_grad():
