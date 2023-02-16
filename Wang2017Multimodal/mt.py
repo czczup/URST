@@ -74,9 +74,9 @@ class MT(nn.Module):
         self.refine_subnet.load_state_dict(refine_subnet)
 
         # for error 'conv2d has no attribute padding_mode'
-        for m in self.modules():
-            if 'Conv' in str(type(m)):
-                setattr(m, 'padding_mode', 'none')
+        # for m in self.modules():
+        #     if 'Conv' in str(type(m)):
+        #         setattr(m, 'padding_mode', 'none')
 
     def forward(self, x):
         # x = F.interpolate(x, 256, mode='bilinear', align_corners=True)
